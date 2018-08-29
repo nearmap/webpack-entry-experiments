@@ -265,3 +265,5 @@ It is best to also use that version to make sure things run.
 npm install
 npm start
 ```
+
+This starts a webserver and you can see the running app at http://localhost:8080/test/page1.html
