@@ -14,7 +14,7 @@ The [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)
 can help, and it will generate a page and automatically inject CSS and JS files
 for the generated chunks an entry-point depends on.
 
-As soon as we want to share code across multiple pages and entry-points
+As soon as we want to share code across multiple pages and entry-points,
 things get a bit more interesting.
 
 You can pass an explicit list of chunks to the [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)
@@ -32,9 +32,8 @@ The [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)
 supports custom templates which is enough to find an entry-point's chunks and
 inject them manually into the HTML.
 
-[webpack.config.js](./webpack.config.js):
+[./webpack.config.js](./webpack.config.js):
 ```javascript
-// webpack.config.js
 {
   entry: {
     page1: 'src/page1.js',
@@ -57,7 +56,7 @@ inject them manually into the HTML.
 }
 ```
 
-[entry-point module](./src/page1.js)
+[./src/page1.js](./src/page1.js)
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -68,12 +67,13 @@ import './page1.css';
 ReactDOM.render(<App />, document.getElementById('page1-app'));
 ```
 
-The [template](./src/page1.template.js) can be any webpack loadable JS module
+The template can be any webpack loadable JS module
 that exports a default render function which must return a string.
 [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)
 will pass enough data to that function for us to find all chunks for a given
 entry-point.
 
+[./src/page1.template.js](./src/page1.template.js)
 ```javascript
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -132,7 +132,7 @@ When webpack has finished optimizing all chunks at the end of the compilation,
 we can then take the extracted HTML and inject the entry module's
 style and script chunk references.
 
-[webpack.config.js](./webpack.config.js):
+[./webpack.config.js](./webpack.config.js):
 ```javascript
 {
   entry: {
@@ -145,7 +145,7 @@ style and script chunk references.
 }
 ```
 
-[entry-point module](./src/page2.html):
+[./src/page2.html](./src/page2.html):
 ```html
 <html>
   <head>
@@ -159,7 +159,7 @@ style and script chunk references.
 </html>
 ```
 
-[entry-point module dependency](./src/page2.js):
+[./src/page2.js](./src/page2.js):
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -215,7 +215,7 @@ for our entry-point.
 The loader expects a JS module that has a react component as the default export.
 This component is a mix of template and application code.
 
-[entry-point module](./src/page3.js):
+[./src/page3.js](./src/page3.js):
 ```javascript
 import React from 'react';
 
