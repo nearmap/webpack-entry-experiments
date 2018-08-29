@@ -178,7 +178,6 @@ referenced load automatically.
 ### react-entry-loader and entry-transform-plugin
 
 One nice thing about using a custom template with the [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)
-
 is that we can generate our HTML code using the same tech as we use
 for the rest of our react application. I.e. it is just a react component
 that we can test and render exactly the way we want.
@@ -198,7 +197,7 @@ a custom template.
 We use another [custom loader](src/wp/react-entry-loader.js)
 for our entry-point.
 
-[webpack.config.js](./webpack.config.js):
+[./webpack.config.js](./webpack.config.js):
 ```javascript
 {
   entry: {
@@ -259,8 +258,8 @@ generate HTML using that template code at the end of webpack's compilation run.
 
 ## Running the examples:
 
-The code has been developped on node 10,
-it is best to also use that version to make sure things run.
+The code has been developed using node v10.
+It is best to also use that version to make sure things run.
 
 ```bash
 npm install
